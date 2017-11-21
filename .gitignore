@@ -8,6 +8,7 @@ src/rubycoin-tx
 src/test/test_rubycoin
 src/test/test_rubycoin_fuzzy
 src/qt/test/test_rubycoin-qt
+src/bench/bench_rubycoin
 
 # autoreconf
 Makefile.in
