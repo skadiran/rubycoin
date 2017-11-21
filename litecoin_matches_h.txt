@@ -1,0 +1,1 @@
+chainparamsseeds.h: * List of fixed seed nodes for the litecoin network

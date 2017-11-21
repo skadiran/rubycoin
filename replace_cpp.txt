@@ -1,0 +1,351 @@
+./util.cpp:const char * const BITCOIN_CONF_FILENAME = "litecoin.conf";
+./util.cpp:const char * const BITCOIN_PID_FILENAME = "litecoin.pid";
+./util.cpp:    const char* pszModule = "litecoin";
+./util.cpp:    return GetSpecialFolderPath(CSIDL_APPDATA) / "Litecoin";
+./util.cpp:    return pathRet / "Library/Application Support/Litecoin";
+./util.cpp:    return pathRet / ".litecoin";
+./clientversion.cpp:const std::string CLIENT_NAME("LitecoinCore");
+./bench/checkblock.cpp:// Litecoin uses block height 878439, hash 0babe680f55a55d54339511226755f0837261da89a4e78eba4d6436a63026df8
+./bitcoin-cli.cpp:                  "  litecoin-cli [options] <command> [params]  " + strprintf(_("Send command to %s"), _(PACKAGE_NAME)) + "\n" +
+./bitcoin-cli.cpp:                  "  litecoin-cli [options] -named <command> [name=value] ... " + strprintf(_("Send command to %s (with named arguments)"), _(PACKAGE_NAME)) + "\n" +
+./bitcoin-cli.cpp:                  "  litecoin-cli [options] help                " + _("List commands") + "\n" +
+./bitcoin-cli.cpp:                  "  litecoin-cli [options] help <command>      " + _("Get help for a command") + "\n";
+./bitcoin-tx.cpp:        std::string strUsage = strprintf(_("%s litecoin-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
+./bitcoin-tx.cpp:              "  litecoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded litecoin transaction") + "\n" +
+./bitcoin-tx.cpp:              "  litecoin-tx [options] -create [commands]   " + _("Create hex-encoded litecoin transaction") + "\n" +
+./test/test_bitcoin.cpp:        pathTemp = GetTempPath() / strprintf("test_litecoin_%lu_%i", (unsigned long)GetTime(), (int)(InsecureRandRange(100000)));
+./qt/bitcoin.cpp:    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. Litecoin can no longer continue safely and will quit.") + QString("\n\n") + message);
+./qt/networkstyle.cpp:        pixmap.load(":/icons/litecoin_splash");
+./qt/askpassphrasedialog.cpp:                 tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR LITECOINS</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
+./qt/askpassphrasedialog.cpp:                                         "your litecoins from being stolen by malware infecting your computer.").arg(tr(PACKAGE_NAME)) +
+./qt/sendcoinsdialog.cpp:            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Litecoin address"));
+./qt/addressbookpage.cpp:        ui->labelExplanation->setText(tr("These are your Litecoin addresses for sending payments. Always check the amount and the receiving address before sending coins."));
+./qt/addressbookpage.cpp:        ui->labelExplanation->setText(tr("These are your Litecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction."));
+./qt/bitcoingui.cpp:    sendCoinsAction->setStatusTip(tr("Send coins to a Litecoin address"));
+./qt/bitcoingui.cpp:    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and litecoin: URIs)"));
+./qt/bitcoingui.cpp:    signMessageAction->setStatusTip(tr("Sign messages with your Litecoin addresses to prove you own them"));
+./qt/bitcoingui.cpp:    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Litecoin addresses"));
+./qt/bitcoingui.cpp:    openAction->setStatusTip(tr("Open a litecoin: URI or payment request"));
+./qt/bitcoingui.cpp:    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible Litecoin command-line options").arg(tr(PACKAGE_NAME)));
+./qt/bitcoingui.cpp:        tooltip = tr("%n active connection(s) to Litecoin network", "", count) + QString(".<br>") + tr("Click to disable network activity.");
+./qt/bitcoingui.cpp:    QString strTitle = tr("Litecoin"); // default title
+./qt/openuridialog.cpp:    ui->uriEdit->setPlaceholderText("litecoin:");
+./qt/openuridialog.cpp:    ui->uriEdit->setText("litecoin:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
+./qt/guiutil.cpp:    widget->setPlaceholderText(QObject::tr("Enter a Litecoin address (e.g. %1)").arg(
+./qt/guiutil.cpp:    if(!uri.isValid() || uri.scheme() != QString("litecoin"))
+./qt/guiutil.cpp:    if(uri.startsWith("litecoin://", Qt::CaseInsensitive))
+./qt/guiutil.cpp:        uri.replace(0, 11, "litecoin:");
+./qt/guiutil.cpp:    QString ret = QString("litecoin:%1").arg(info.address);
+./qt/guiutil.cpp:        return GetSpecialFolderPath(CSIDL_STARTUP) / "Litecoin.lnk";
+./qt/guiutil.cpp:        return GetSpecialFolderPath(CSIDL_STARTUP) / "Litecoin (testnet).lnk";
+./qt/guiutil.cpp:    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Litecoin (%s).lnk", chain);
+./qt/guiutil.cpp:        return GetAutostartDir() / "litecoin.desktop";
+./qt/guiutil.cpp:    return GetAutostartDir() / strprintf("litecoin-%s.lnk", chain);
+./qt/guiutil.cpp:            optionFile << "Name=Litecoin\n";
+./qt/guiutil.cpp:            optionFile << strprintf("Name=Litecoin (%s)\n", chain);
+./qt/editaddressdialog.cpp:                tr("The entered address \"%1\" is not a valid Litecoin address.").arg(ui->addressEdit->text()),
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?req-dontexist="));
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?dontexist="));
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?label=Wikipedia Example Address"));
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=0.001"));
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=1.001"));
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=100&label=Wikipedia Example"));
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?message=Wikipedia Example Address"));
+./qt/test/uritests.cpp:    QVERIFY(GUIUtil::parseBitcoinURI("litecoin://LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?message=Wikipedia Example Address", &rv));
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?req-message=Wikipedia Example Address"));
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=1,000&label=Wikipedia Example"));
+./qt/test/uritests.cpp:    uri.setUrl(QString("litecoin:LEr4HnaeFWYhBmGxCfP2po1NPRueIk8kM2?amount=1,000.0&label=Wikipedia Example"));
+./qt/test/rpcnestedtests.cpp:    std::string path = QDir::tempPath().toStdString() + "/" + strprintf("test_litecoin_qt_%lu_%i", (unsigned long)GetTime(), (int)(GetRand(100000)));
+./qt/test/test_main.cpp:    app.setApplicationName("Litecoin-Qt-test");
+./qt/paymentserver.cpp:const QString BITCOIN_IPC_PREFIX("litecoin:");
+./qt/paymentserver.cpp:const char* BIP71_MIMETYPE_PAYMENT = "application/litecoin-payment";
+./qt/paymentserver.cpp:const char* BIP71_MIMETYPE_PAYMENTACK = "application/litecoin-paymentack";
+./qt/paymentserver.cpp:const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/litecoin-paymentrequest";
+./qt/paymentserver.cpp:    QString name("LitecoinQt");
+./qt/paymentserver.cpp:                tr("Cannot start litecoin: click-to-pay handler"));
+./qt/paymentserver.cpp:                    tr("URI cannot be parsed! This can be caused by an invalid Litecoin address or malformed URI parameters."),
+./qt/utilitydialog.cpp:            "  litecoin-qt [" + tr("command-line options") + "]                     " + "\n";
+./qt/qrc_bitcoin_locale.cpp:  // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_fr.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_nb_NO.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_si.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_vi_VN.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_de_DE.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_bn.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_sk.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_hi_IN.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ka.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_bs.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es_419.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_sq.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ms_MY.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_sr.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_nl_NL.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_sv.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_be_BY.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ca.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_sl_SI.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_pt_BR.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ta.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_gl.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_en_GB.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_fa_IR.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_et_EE.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_te.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_zh_CN.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ky.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_th.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_af_ZA.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_lv_LV.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_la.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_cs.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_zh_TW.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_tr.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_pl.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ku_IQ.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ko_KR.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_cy.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_he_IL.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_he.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_zh_HK.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es_CL.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_it_IT.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_da.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_pam.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es_CO.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_de.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ro_RO.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_lt.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_hr.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_el_GR.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_hu.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_pt_PT.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_uk.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ur_PK.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_fr_FR.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_th_TH.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ja_JP.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_sr@latin.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_id.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_mn.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_en_US.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es_DO.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_zh.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_fr_CA.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_id_ID.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_mk_MK.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_uz@Cyrl.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_my.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_el.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_tr_TR.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_vi.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_it.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_af.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_eu_ES.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_en.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_eo.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es_UY.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ca@valencia.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_kk_KZ.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_nb.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_et.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ne.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ja.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ar.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ro.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_bg_BG.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es_VE.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es_MX.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_nl.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ru.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_fa.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es_ES.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_en_AU.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ca_ES.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_fi.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_ru_RU.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_es_AR.qm
+./qt/qrc_bitcoin_locale.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/locale/bitcoin_bg.qm
+./qt/qrc_bitcoin.cpp:  // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-015.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-000.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-016.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-001.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-017.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-002.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-018.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-003.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-019.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-004.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-005.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-006.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-007.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-008.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-009.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-030.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-031.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-032.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-033.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-034.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-035.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-020.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-021.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-022.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-023.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-024.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-025.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-010.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-026.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-011.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-027.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-012.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-028.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-013.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-029.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/movies/spinner-014.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/quit.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/info.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/editcopy.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/add.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/open.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/fontbigger.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/transaction2.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/tx_inout.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/eye.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/configure.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/transaction_abandoned.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/receive.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/network_disabled.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/eye_plus.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/history.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/tx_output.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/key.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/connect0.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/connect1.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/connect2.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/bitcoin.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/connect3.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/connect4.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/remove.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/litecoin_splash.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/debugwindow.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/hd_enabled.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/edit.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/verify.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/transaction0.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/tx_input.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/clock1.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/lock_open.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/clock2.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/overview.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/clock3.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/tx_mined.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/clock4.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/address-book.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/clock5.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/eye_minus.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/fontsmaller.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/hd_disabled.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/synced.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/chevron.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/about.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/warning.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/transaction_conflicted.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/export.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/filesave.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/send.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/about_qt.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/editpaste.png
+./qt/qrc_bitcoin.cpp:    // /home/sanurhea/litecoin/litecoin/src/qt/res/icons/lock_closed.png
+./qt/qrc_bitcoin.cpp:    // litecoin_splash
+./qt/qrc_bitcoin.cpp:  // :/icons/litecoin_splash
+./qt/bitcoinunits.cpp:    case BTC: return QString("Litecoins");
+./wallet/rpcdump.cpp:            "importprivkey \"litecoinprivkey\" ( \"label\" ) ( rescan )\n"
+./wallet/rpcdump.cpp:            "1. \"litecoinprivkey\"   (string, required) The private key (see dumpprivkey)\n"
+./wallet/rpcdump.cpp:        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Litecoin address or script");
+./wallet/rpcdump.cpp:            "1. \"address\"   (string, required) The litecoin address for the private key\n"
+./wallet/rpcdump.cpp:        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Litecoin address");
+./wallet/rpcdump.cpp:            "1. \"filename\"    (string, required) The filename with path (either absolute or relative to litecoind)\n"
+./wallet/rpcdump.cpp:    file << strprintf("# Wallet dump created by Litecoin %s\n", CLIENT_BUILD);
+./wallet/rpcwallet.cpp:            "\nReturns a new Litecoin address for receiving payments.\n"
+./wallet/rpcwallet.cpp:            "\"address\"    (string) The new litecoin address\n"
+./wallet/rpcwallet.cpp:            "\nDEPRECATED. Returns the current Litecoin address for receiving payments to this account.\n"
+./wallet/rpcwallet.cpp:            "\"address\"          (string) The account litecoin address\n"
+./wallet/rpcwallet.cpp:            "\nReturns a new Litecoin address, for receiving change.\n"
+./wallet/rpcwallet.cpp:            "1. \"address\"         (string, required) The litecoin address to be associated with an account.\n"
+./wallet/rpcwallet.cpp:        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Litecoin address");
+./wallet/rpcwallet.cpp:            "1. \"address\"         (string, required) The litecoin address for account lookup.\n"
+./wallet/rpcwallet.cpp:        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Litecoin address");
+./wallet/rpcwallet.cpp:            "  \"address\"         (string) a litecoin address associated with the given account\n"
+./wallet/rpcwallet.cpp:            "1. \"address\"            (string, required) The litecoin address to send to.\n"
+./wallet/rpcwallet.cpp:            "                             The recipient will receive less litecoins than you enter in the amount field.\n"
+./wallet/rpcwallet.cpp:        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Litecoin address");
+./wallet/rpcwallet.cpp:            "      \"address\",            (string) The litecoin address\n"
+./wallet/rpcwallet.cpp:            "1. \"address\"         (string, required) The litecoin address to use for the private key.\n"
+./wallet/rpcwallet.cpp:            "1. \"address\"         (string, required) The litecoin address for transactions.\n"
+./wallet/rpcwallet.cpp:        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Litecoin address");
+./wallet/rpcwallet.cpp:            "\nDEPRECATED (use sendtoaddress). Sent an amount from an account to a litecoin address."
+./wallet/rpcwallet.cpp:            "2. \"toaddress\"         (string, required) The litecoin address to send funds to.\n"
+./wallet/rpcwallet.cpp:        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Litecoin address");
+./wallet/rpcwallet.cpp:            "      \"address\":amount   (numeric or string) The litecoin address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value\n"
+./wallet/rpcwallet.cpp:            "                           Those recipients will receive less litecoins than you enter in their corresponding amount field.\n"
+./wallet/rpcwallet.cpp:            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Litecoin address: ")+name_);
+./wallet/rpcwallet.cpp:            "Each key is a Litecoin address or hex-encoded public key.\n"
+./wallet/rpcwallet.cpp:            "2. \"keys\"         (string, required) A json array of litecoin addresses or hex-encoded public keys\n"
+./wallet/rpcwallet.cpp:            "       \"address\"  (string) litecoin address or hex-encoded public key\n"
+./wallet/rpcwallet.cpp:            "\"address\"         (string) A litecoin address associated with the keys.\n"
+./wallet/rpcwallet.cpp:        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Litecoin address");
+./wallet/rpcwallet.cpp:            "    \"address\":\"address\",    (string) The litecoin address of the transaction. Not present for \n"
+./wallet/rpcwallet.cpp:            "    \"address\":\"address\",    (string) The litecoin address of the transaction. Not present for move transactions (category = move).\n"
+./wallet/rpcwallet.cpp:            "      \"address\" : \"address\",          (string) The litecoin address involved in the transaction\n"
+./wallet/rpcwallet.cpp:            "This is needed prior to performing transactions related to private keys such as sending litecoins\n"
+./wallet/rpcwallet.cpp:            "\nNow set the passphrase to use the wallet, such as for signing or sending litecoin\n"
+./wallet/rpcwallet.cpp:    return "wallet encrypted; Litecoin server stopping, restart to run with encrypted wallet. The keypool has been flushed and a new HD seed was generated (if you are using HD). You need to make a new backup.";
+./wallet/rpcwallet.cpp:            "A locked transaction output will not be chosen by automatic coin selection, when spending litecoins.\n"
+./wallet/rpcwallet.cpp:            "3. \"addresses\"      (string) A json array of litecoin addresses to filter\n"
+./wallet/rpcwallet.cpp:            "      \"address\"     (string) litecoin address\n"
+./wallet/rpcwallet.cpp:            "    \"address\" : \"address\",    (string) the litecoin address\n"
+./wallet/rpcwallet.cpp:                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Litecoin address: ")+input.get_str());
+./wallet/rpcwallet.cpp:                            "     \"changeAddress\"          (string, optional, default pool address) The litecoin address to receive the change\n"
+./wallet/rpcwallet.cpp:                            "                              Those recipients will receive less litecoins than you enter in their corresponding amount field.\n"
+./wallet/rpcwallet.cpp:                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "changeAddress must be a valid litecoin address");
+./rpc/rawtransaction.cpp:            "           \"address\"        (string) litecoin address\n"
+./rpc/rawtransaction.cpp:            "      \"address\": x.xxx,    (numeric or string, required) The key is the litecoin address, the numeric value (can be string) is the " + CURRENCY_UNIT + " amount\n"
+./rpc/rawtransaction.cpp:                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Litecoin address: ")+name_);
+./rpc/rawtransaction.cpp:            "           \"12tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc\"   (string) litecoin address\n"
+./rpc/rawtransaction.cpp:            "     \"address\"     (string) litecoin address\n"
+./rpc/net.cpp:            "         \"address\" : \"192.168.0.201:9333\",  (string) The litecoin server IP and port we're connected to\n"
+./rpc/server.cpp:            "\nStop Litecoin server.");
+./rpc/server.cpp:    return "Litecoin server stopping";
+./rpc/server.cpp:    return "> litecoin-cli " + methodname + " " + args + "\n";
+./rpc/blockchain.cpp:            "     \"addresses\" : [          (array of string) array of litecoin addresses\n"
+./rpc/blockchain.cpp:            "        \"address\"     (string) litecoin address\n"
+./rpc/misc.cpp:            "  \"balance\": xxxxxxx,         (numeric) the total litecoin balance of the wallet\n"
+./rpc/misc.cpp:            "\nReturn information about the given litecoin address.\n"
+./rpc/misc.cpp:            "1. \"address\"     (string, required) The litecoin address to validate\n"
+./rpc/misc.cpp:            "  \"address\" : \"address\", (string) The litecoin address validated\n"
+./rpc/misc.cpp:            "2. \"keys\"       (string, required) A json array of keys which are litecoin addresses or hex-encoded public keys\n"
+./rpc/misc.cpp:            "       \"key\"    (string) litecoin address or hex-encoded public key\n"
+./rpc/misc.cpp:            "1. \"address\"         (string, required) The litecoin address to use for the signature.\n"
+./rpc/misc.cpp:            "litecoin-cli and the GUI. There is no server-side difference."
+./rpc/mining.cpp:            "2. address      (string, required) The address to send the newly generated litecoin to.\n"
+./rpc/mining.cpp:        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Litecoin is not connected!");
+./rpc/mining.cpp:        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Litecoin is downloading blocks...");
+./bitcoind.cpp:                  "  litecoind [options]                     " + strprintf(_("Start %s Daemon"), _(PACKAGE_NAME)) + "\n";
+./bitcoind.cpp:                fprintf(stderr, "Error: Command line contains unexpected token '%s', see litecoind -h for a list of options.\n", argv[i]);
+./bitcoind.cpp:            fprintf(stdout, "Litecoin server starting\n");
+./net.cpp:        std::string strDesc = "Litecoin " + FormatFullVersion();
+./txdb.cpp:                // Litecoin: Disable PoW Sanity check while loading block index from disk.
+./txdb.cpp:                // requires recomputing every PoW hash during every Litecoin startup.
+./validation.cpp:# error "Litecoin cannot be compiled without assertions."
+./validation.cpp:const std::string strMessageMagic = "Litecoin Signed Message:\n";
+./init.cpp:    const std::string URL_SOURCE_CODE = "<https://github.com/litecoin-project/litecoin>";
+./init.cpp:    const std::string URL_WEBSITE = "<https://litecoin.org>";
+./init.cpp:    LogPrintf("Litecoin version %s\n", FormatFullVersion());
+./chainparams.cpp:        vSeeds.emplace_back("seed-a.litecoin.loshan.co.uk", true);
+./chainparams.cpp:        vSeeds.emplace_back("dnsseed.litecointools.com", true);
+./chainparams.cpp:        vSeeds.emplace_back("dnsseed.litecoinpool.org", true);
+./chainparams.cpp:        vSeeds.emplace_back("testnet-seed.litecointools.com", true);
+./chainparams.cpp:        vSeeds.emplace_back("seed-b.litecoin.loshan.co.uk", true);
+./net_processing.cpp:# error "Litecoin cannot be compiled without assertions."
+./pow.cpp:    // Litecoin: This fixes an issue where a 51% attack can change difficulty at will.
+./pow.cpp:    // Litecoin: intermediate uint256 can overflow by 1 bit

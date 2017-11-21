@@ -39,7 +39,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     }
 
     // Go back by what we want to be 14 days worth of blocks
-    // Litecoin: This fixes an issue where a 51% attack can change difficulty at will.
+    // Rubycoin: This fixes an issue where a 51% attack can change difficulty at will.
     // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
     int blockstogoback = params.DifficultyAdjustmentInterval()-1;
     if ((pindexLast->nHeight+1) != params.DifficultyAdjustmentInterval())
@@ -72,7 +72,7 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
     arith_uint256 bnOld;
     bnNew.SetCompact(pindexLast->nBits);
     bnOld = bnNew;
-    // Litecoin: intermediate uint256 can overflow by 1 bit
+    // Rubycoin: intermediate uint256 can overflow by 1 bit
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     bool fShift = bnNew.bits() > bnPowLimit.bits() - 1;
     if (fShift)
@@ -95,14 +95,23 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     arith_uint256 bnTarget;
 
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
+    //std::cout<<"nBits="<<nBits<<std::endl;
 
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
-        return false;
-
+          return false;
+    
+    //std::cout<<UintToArith256(hash).ToString().c_str()  <<" ---- "<<bnTarget.ToString().c_str() <<std::endl;
+   
     // Check proof of work matches claimed amount
     if (UintToArith256(hash) > bnTarget)
+    {
+	   //std::cout<<"check pow false"<<std::endl;
+        //std::cout<<UintToArith256(hash).ToString().c_str()  <<" ---- "<<bnTarget.ToString().c_str() <<std::endl;
+
         return false;
+    }
+
 
     return true;
 }
